@@ -11,9 +11,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 
 <style>
-/* ============================================================
-   TOKENS
-   ============================================================ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -115,7 +112,6 @@ html, body {
   border: 1px solid rgba(255,179,201,.45); box-shadow: none;
 }
 
-/* WELCOME */
 .welcome-name {
   font-family: 'Great Vibes', cursive;
   font-size: clamp(3rem, 11vw, 6rem);
@@ -141,7 +137,6 @@ html, body {
   line-height: 1.85;
 }
 
-/* OUR BEGINNING */
 .heart-heading {
   font-family: 'Great Vibes', cursive;
   font-size: var(--fs-script);
@@ -340,7 +335,6 @@ html, body {
   margin-top: 6px;
 }
 
-/* REVEAL SECTIONS */
 .reveal-section { max-width: 680px; margin: 24px auto 0; }
 .reveal-line {
   font-family: 'Cormorant Garamond', serif;
@@ -369,7 +363,6 @@ html, body {
   line-height: 1.45;
 }
 
-/* DISTANCE IMAGE */
 .distance-image { max-width: 440px; margin: 44px auto 0; }
 .distance-image-frame {
   position: relative; border-radius: 14px; overflow: hidden;
@@ -391,7 +384,6 @@ html, body {
   text-shadow: 0 0 20px rgba(255,107,157,.45);
 }
 
-/* NICKNAMES */
 .nickname-sub {
   font-size: clamp(.95rem, 2.4vw, 1.1rem);
   font-style: italic; color: rgba(255,246,249,.6);
@@ -452,7 +444,6 @@ html, body {
   .nick-card:hover .nick-inner { transform: rotateY(8deg) scale(1.03); }
 }
 
-/* GALLERY */
 .gallery-sub {
   font-size: clamp(.95rem, 2.4vw, 1.1rem);
   font-style: italic; color: rgba(255,246,249,.6);
@@ -502,7 +493,6 @@ html, body {
   text-align: left; line-height: 1.3; pointer-events: none;
 }
 
-/* LIGHTBOX */
 .lightbox {
   position: fixed; inset: 0; z-index: 200;
   background: rgba(5,2,8,.96);
@@ -554,7 +544,6 @@ html, body {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* ENVELOPE */
 .envelope-stage { display: flex; flex-direction: column; align-items: center; gap: 32px; }
 .envelope {
   position: relative;
@@ -621,7 +610,6 @@ html, body {
 }
 @keyframes heartPop { from { transform: scale(0); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 
-/* LETTER */
 .letter-card {
   position: relative; max-width: 640px; margin: 0 auto;
   padding: clamp(32px, 6vw, 56px) clamp(20px, 5vw, 46px);
@@ -655,7 +643,6 @@ html, body {
 }
 .letter-card em { font-style: italic; color: #8b3a5e; }
 
-/* PROPOSAL */
 .proposal-frame {
   max-width: 680px; margin: 0 auto;
   padding: clamp(36px, 7vw, 64px) clamp(22px, 5vw, 48px);
@@ -696,7 +683,6 @@ html, body {
 }
 #yesBtn { transition: transform .45s cubic-bezier(.2,.8,.3,1); }
 
-/* CELEBRATION */
 .big-heart {
   font-size: clamp(2.6rem, 9vw, 3.4rem); display: inline-block;
   animation: beat 1.4s ease-in-out infinite;
@@ -789,7 +775,6 @@ html, body {
   50%     { transform: rotate(-14deg) scale(1.06); }
 }
 
-/* SONG 1 — BACKGROUND PLAYER */
 #music-player {
   position: fixed;
   bottom: calc(16px + env(safe-area-inset-bottom, 0px));
@@ -831,7 +816,6 @@ html, body {
   color: rgba(255,246,249,.55);
 }
 
-/* SONG 2 — DEDICATED FINAL PLAYER */
 #final-player {
   position: fixed;
   bottom: calc(16px + env(safe-area-inset-bottom, 0px));
@@ -957,23 +941,14 @@ html, body {
 <canvas id="hearts"></canvas>
 <canvas id="fx"></canvas>
 
-<!-- ============================================================
-     SONG 1 — BACKGROUND MUSIC
-     Plays from Welcome → Distance, fades out at the letter.
-     ============================================================ -->
 <audio id="bg-music" preload="auto">
   <source src="background-song.mp3" type="audio/mpeg" />
 </audio>
 
-<!-- ============================================================
-     SONG 2 — DEDICATED FINAL SONG
-     Plays from the Proposal onward, with its own player.
-     ============================================================ -->
 <audio id="final-music" preload="auto">
   <source src="final-song.mp3" type="audio/mpeg" />
 </audio>
 
-<!-- BACKGROUND PLAYER (song 1) -->
 <div id="music-player" aria-label="Background music">
   <button id="music-toggle" title="Play / pause background music">♪</button>
   <div class="music-meta">
@@ -982,7 +957,6 @@ html, body {
   </div>
 </div>
 
-<!-- DEDICATED FINAL PLAYER (song 2) -->
 <div id="final-player" aria-label="Now playing — for you">
   <div class="final-art">♪</div>
   <div class="final-info">
@@ -997,7 +971,6 @@ html, body {
 </div>
 
 
-<!-- SCREEN 1 — WELCOME -->
 <section class="screen active" id="s-welcome">
   <div class="wrap">
     <p class="eyebrow reveal" style="--d:.1s">For you, only you</p>
@@ -1018,7 +991,6 @@ html, body {
 </section>
 
 
-<!-- SCREEN 2 — OUR BEGINNING -->
 <section class="screen" id="s-beginning">
   <div class="wrap">
     <p class="eyebrow reveal" style="--d:.1s">2 July 2026</p>
@@ -1062,7 +1034,6 @@ html, body {
 </section>
 
 
-<!-- SCREEN 3 — LITTLE THINGS -->
 <section class="screen" id="s-little-things">
   <div class="wrap">
     <p class="eyebrow reveal" style="--d:.1s">The little things</p>
@@ -1076,7 +1047,6 @@ html, body {
 </section>
 
 
-<!-- SCREEN 4 — NICKNAMES -->
 <section class="screen" id="s-nicknames">
   <div class="wrap">
     <p class="eyebrow reveal" style="--d:.1s">The many names</p>
@@ -1093,7 +1063,6 @@ html, body {
 </section>
 
 
-<!-- SCREEN 5 — GALLERY -->
 <section class="screen" id="s-gallery">
   <div class="wrap">
     <p class="eyebrow reveal" style="--d:.1s">Our little story</p>
@@ -1110,7 +1079,6 @@ html, body {
 </section>
 
 
-<!-- SCREEN 6 — THE DISTANCE -->
 <section class="screen" id="s-distance">
   <div class="wrap">
     <p class="eyebrow reveal" style="--d:.1s">The distance</p>
@@ -1133,7 +1101,6 @@ html, body {
 </section>
 
 
-<!-- SCREEN 7 — ENVELOPE -->
 <section class="screen" id="s-envelope">
   <div class="wrap">
     <div class="envelope-stage">
@@ -1153,7 +1120,6 @@ html, body {
 </section>
 
 
-<!-- SCREEN 8 — LETTER -->
 <section class="screen" id="s-letter">
   <div class="wrap">
     <div class="letter-card">
@@ -1201,7 +1167,6 @@ html, body {
 </section>
 
 
-<!-- SCREEN 9 — PROPOSAL -->
 <section class="screen" id="s-proposal">
   <div class="wrap">
     <div class="proposal-frame reveal" style="--d:.2s">
@@ -1236,7 +1201,6 @@ html, body {
 </section>
 
 
-<!-- SCREEN 10 — CELEBRATION -->
 <section class="screen" id="s-celebration">
   <div class="wrap">
     <div class="big-heart reveal" style="--d:.1s">❤</div>
@@ -1274,7 +1238,6 @@ html, body {
 </section>
 
 
-<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" aria-hidden="true">
   <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
   <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous">‹</button>
@@ -1555,7 +1518,10 @@ function startBgMusic() {
   bgFadedOut = false;
   bgPlayer.classList.add('visible');
   bgAudio.volume = 0.7;
-  bgAudio.play().then(() => updateBgUI(true)).catch(() => updateBgUI(false));
+  bgAudio.play().then(() => updateBgUI(true)).catch(err => {
+    console.warn('[background song] play() failed:', err.name, err.message);
+    updateBgUI(false);
+  });
 }
 
 function toggleBgMusic() {
@@ -1601,7 +1567,16 @@ function updateFinalUI(playing) {
 function startFinalMusic() {
   finalPlayer.classList.add('visible');
   finalAudio.volume = 0.75;
-  finalAudio.play().then(() => updateFinalUI(true)).catch(() => updateFinalUI(false));
+  const p = finalAudio.play();
+  if (p && p.then) {
+    p.then(() => {
+      console.log('[final song] playing — duration:', finalAudio.duration, 's');
+      updateFinalUI(true);
+    }).catch(err => {
+      console.error('[final song] play() failed →', err.name, '|', err.message);
+      updateFinalUI(false);
+    });
+  }
 }
 
 function toggleFinalMusic() {
@@ -1620,7 +1595,7 @@ function resetFinalMusic() {
 }
 
 /* ============================================================
-   LOOP + DURATION FIXES
+   LOOP + AUDIO DIAGNOSTICS
    ============================================================ */
 finalAudio.addEventListener('timeupdate', () => {
   if (finalAudio.duration && isFinite(finalAudio.duration)) {
@@ -1629,7 +1604,7 @@ finalAudio.addEventListener('timeupdate', () => {
   }
 });
 
-// Restart only after the FULL song finishes (no `loop` attribute needed)
+// Restart only after the FULL song finishes
 bgAudio.addEventListener('ended', () => {
   if (bgFadedOut) return;
   bgAudio.currentTime = 0;
@@ -1642,26 +1617,15 @@ finalAudio.addEventListener('ended', () => {
   finalAudio.play().then(() => updateFinalUI(true)).catch(() => updateFinalUI(false));
 });
 
-// Force browser to read the real duration of the file
-// (fixes VBR MP3s and any file whose metadata makes the browser
-//  report a shorter duration than the actual length)
-function fixAudioDuration(audioEl) {
-  const applyFix = () => {
-    if (audioEl.duration === Infinity || isNaN(audioEl.duration) || audioEl.duration < 5) {
-      const saved = audioEl.currentTime;
-      audioEl.currentTime = 1e101;
-      const onTimeUpdate = () => {
-        audioEl.removeEventListener('timeupdate', onTimeUpdate);
-        audioEl.currentTime = saved;
-      };
-      audioEl.addEventListener('timeupdate', onTimeUpdate);
-    }
-  };
-  if (audioEl.readyState >= 1) applyFix();
-  else audioEl.addEventListener('loadedmetadata', applyFix, { once: true });
-}
-fixAudioDuration(bgAudio);
-fixAudioDuration(finalAudio);
+// Audio error diagnostics — will tell you in console if the file is missing or malformed
+bgAudio.addEventListener('error', () => {
+  const code = bgAudio.error ? bgAudio.error.code : 'unknown';
+  console.error('[background song] failed to load. Check that background-song.mp3 exists and is a valid MP3. Error code:', code);
+});
+finalAudio.addEventListener('error', () => {
+  const code = finalAudio.error ? finalAudio.error.code : 'unknown';
+  console.error('[final song] failed to load. Check that final-song.mp3 exists and is a valid MP3. Error code:', code);
+});
 
 /* ============================================================
    OUR BEGINNING
@@ -1940,9 +1904,10 @@ document.getElementById('nicknamesContinue').addEventListener('click', () => sho
 document.getElementById('galleryContinue').addEventListener('click', () => showScreen('s-distance'));
 document.getElementById('distanceContinue').addEventListener('click', () => showScreen('s-envelope'));
 
+// FIXED: play synchronously inside the click, no setTimeout
 document.getElementById('letterContinue').addEventListener('click', () => {
   showScreen('s-proposal');
-  setTimeout(startFinalMusic, 700);
+  startFinalMusic();
 });
 
 /* ============================================================
