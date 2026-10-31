@@ -204,9 +204,6 @@ html, body {
 .letter-card .ps { font-size: .9rem; font-style: italic; color: #8b5568; text-align: right; margin-top: 4px; }
 .letter-card em { font-style: italic; color: #8b3a5e; }
 
-/* ============================================================
-   SMALL CONFESSIONS (new - replaces Noticed)
-   ============================================================ */
 .confessions-intro {
   font-family: 'Cormorant Garamond', serif; font-style: italic;
   font-size: clamp(1rem, 2.6vw, 1.15rem); color: rgba(255,246,249,.68);
@@ -257,7 +254,6 @@ html, body {
   animation-delay: calc(.4s + 7 * .55s + .4s);
 }
 
-/* PROMISES */
 .promises-intro {
   font-family: 'Cormorant Garamond', serif; font-style: italic;
   font-size: clamp(1rem, 2.6vw, 1.2rem); color: rgba(255,246,249,.72);
@@ -307,7 +303,6 @@ html, body {
   animation-delay: calc(.3s + 7 * .35s + .3s);
 }
 
-/* OUR FUTURE */
 .future-intro {
   font-family: 'Cormorant Garamond', serif; font-style: italic;
   font-size: clamp(1rem, 2.6vw, 1.15rem); color: rgba(255,246,249,.68);
@@ -367,7 +362,6 @@ html, body {
 }
 .future-count.all-done { color: var(--rose-soft); }
 
-/* US COUNTER */
 .us-counter {
   max-width: 520px; margin: 0 auto 36px; padding: 20px 24px;
   border-radius: 14px;
@@ -400,7 +394,6 @@ html, body {
   font-size: .85rem; color: rgba(255,246,249,.6); margin-top: 12px;
 }
 
-/* LOVE NOTES JAR */
 .notes-jar {
   max-width: 500px;
   margin: 44px auto 0;
@@ -451,7 +444,6 @@ html, body {
   text-shadow: 0 0 22px rgba(255,107,157,.5);
 }
 
-/* OPEN WHEN YOU MISS ME */
 .miss-me-btn {
   display: inline-flex; align-items: center; gap: 10px;
   margin: 44px auto 0; padding: 14px 26px;
@@ -659,7 +651,7 @@ html, body {
     <p class="eyebrow reveal" style="--d:.1s">Our little story</p>
     <h2 class="script reveal" style="--d:.25s; font-size: var(--fs-h2);">Moments we've made</h2>
     <div class="rule reveal" style="--d:.4s"></div>
-    <p class="gallery-sub reveal" style="--d:.55s">Every photo, every clip — a piece of us.<br>Tap any one to open it.</p>
+    <p class="gallery-sub reveal" style="--d:.55s">Every video, every moment — a piece of us.<br>Tap any one to open it.</p>
     <div class="media-grid" id="mediaGrid"></div>
     <div class="reveal" style="--d:1.4s; margin-top: 40px;">
       <button class="btn" id="galleryContinue">The distance between us…</button>
@@ -722,7 +714,6 @@ html, body {
   </div>
 </section>
 
-<!-- ============ SMALL CONFESSIONS (new screen) ============ -->
 <section class="screen" id="s-confessions">
   <div class="wrap">
     <p class="eyebrow reveal" style="--d:.1s">Small confessions</p>
@@ -925,14 +916,13 @@ const CONFIG = {
     'Until there\'s no distance left between us — I\'ll be here. Choosing you. Every call, every message, every single day.'
   ],
 
-  // NEW: small confessions
   confessions: [
     'I\'ve read our first conversation more times than I\'ll ever admit to.',
-    'Sometimes I type a message, then delete it — because it feels like too much. Then I send it anyway.',
+    'Sometimes I open our chat just to see your name at the top of the screen. I don\'t type anything. I just look.',
     'I have a folder on my phone I\'ve been secretly filling with things I want to show you one day.',
     'When you say "I miss you," I have to sit with it for a minute before I reply. Because it hits harder than you know.',
     'I\'ve imagined our first meeting so many times that I\'ve lost count.',
-    'When you call me by my name — not any nickname, just my name — I feel it somewhere deep.',
+    'There are screenshots I\'ve saved of our conversations that I\'ve never told you about. The ones where you said something that made me stop.',
     'I told my friends about you before I ever told you. You were already my favourite thing to talk about.'
   ],
 
@@ -983,14 +973,10 @@ const CONFIG = {
   ],
 
   moments: [
-    { type: 'image', src: 'photo1.jpg', caption: 'The day we met' },
-    { type: 'image', src: 'photo2.jpg', caption: 'Our first adventure' },
-    { type: 'video', src: 'video1.mp4', caption: 'That laugh of yours', poster: 'thumb1.jpg' },
-    { type: 'image', src: 'photo3.jpg', caption: 'Us on a random Tuesday' },
-    { type: 'video', src: 'video2.mp4', caption: 'The night we couldn\'t stop talking' },
-    { type: 'image', src: 'photo4.jpg', caption: 'My favourite view' },
-    { type: 'video', src: 'video3.mp4', caption: 'You being you' },
-    { type: 'image', src: 'photo5.jpg', caption: 'Home is wherever you are' }
+    { type: 'video', src: 'https://res.cloudinary.com/ptc8i4ew/video/upload/v1793454227/startingchat.mp4', caption: 'The day we met — and the day we became us' },
+    { type: 'video', src: 'https://res.cloudinary.com/ptc8i4ew/video/upload/v1793454272/firstvideocall.mp4', caption: 'Our first video call' },
+    { type: 'video', src: 'https://res.cloudinary.com/ptc8i4ew/video/upload/v1793461354/aivideo.mp4', caption: 'Us — together, even from far away' },
+    { type: 'video', src: 'https://res.cloudinary.com/ptc8i4ew/video/upload/v1793467804/allherpic.mp4', caption: 'All of you, from the very start' }
   ]
 };
 
@@ -999,7 +985,6 @@ const screens = {};
 screenIds.forEach(id => screens[id] = document.getElementById(id));
 function showScreen(id) { Object.values(screens).forEach(s => s.classList.remove('active')); screens[id].classList.add('active'); screens[id].scrollTop = 0; }
 
-/* US COUNTER */
 function updateUsCounter() {
   const now = new Date();
   const diff = Math.max(0, now - CONFIG.togetherSince);
@@ -1015,7 +1000,6 @@ function updateUsCounter() {
 updateUsCounter();
 setInterval(updateUsCounter, 30000);
 
-/* AMBIENT HEARTS */
 const hCanvas = document.getElementById('hearts');
 const hCtx = hCanvas.getContext('2d');
 let W = 0, H = 0, DPR = Math.min(window.devicePixelRatio || 1, 2);
@@ -1041,7 +1025,6 @@ function animateHearts() {
 }
 if (!reduceMotion) animateHearts();
 
-/* CONFETTI */
 const fCanvas = document.getElementById('fx');
 const fCtx = fCanvas.getContext('2d');
 let FW = 0, FH = 0;
@@ -1074,7 +1057,6 @@ function animateFx() {
   else { fxRunning = false; fCtx.clearRect(0, 0, FW, FH); }
 }
 
-/* HEART RAIN */
 let heartRainActive = false;
 function startHeartRain() {
   if (reduceMotion || heartRainActive) return;
@@ -1091,7 +1073,6 @@ function startHeartRain() {
 }
 function stopHeartRain() { heartRainActive = false; const c = document.getElementById('heartRain'); if (c) c.remove(); }
 
-/* BG MUSIC */
 const bgAudio = document.getElementById('bg-music');
 let bgFadedOut = false;
 function startBgMusic() { bgFadedOut = false; bgAudio.volume = 0.65; bgAudio.play().catch(err => console.warn('[bg]', err.name)); }
@@ -1108,7 +1089,6 @@ function fadeOutBgAudio(duration = 2200) {
 }
 bgAudio.addEventListener('ended', () => { if (bgFadedOut) return; bgAudio.currentTime = 0; bgAudio.play().catch(() => {}); });
 
-/* FINAL SONG */
 const finalAudio = document.getElementById('final-music');
 const finalPlayer = document.getElementById('final-player');
 const finalToggle = document.getElementById('final-toggle');
@@ -1141,7 +1121,6 @@ finalAudio.addEventListener('timeupdate', () => { if (finalAudio.duration && isF
 finalAudio.addEventListener('error', () => { const c = finalAudio.error ? finalAudio.error.code : '?'; console.error('[final]', c, errName(c)); if (finalPlayer.classList.contains('visible')) { finalLabel.textContent = 'File error'; setStatus(errName(c), 'error'); updateUI(false); } });
 finalAudio.addEventListener('ended', () => { finalProgress.style.width = '0%'; finalAudio.currentTime = 0; updateUI(false); });
 
-/* OUR BEGINNING */
 const heartBtn = document.getElementById('heartBtn');
 const heartPrompt = document.getElementById('heartPrompt');
 const heartWrapper = document.getElementById('heartWrapper');
@@ -1190,7 +1169,6 @@ heartBtn.addEventListener('click', tapHeart);
 storyTapPrompt.addEventListener('click', showNextBeat);
 beginningContinue.addEventListener('click', () => showScreen('s-little-things'));
 
-/* BUILD REVEAL SECTIONS */
 function buildRevealSection(containerId, lines, specialLine) {
   const container = document.getElementById(containerId);
   container.innerHTML = '';
@@ -1208,7 +1186,6 @@ function buildRevealSection(containerId, lines, specialLine) {
 buildRevealSection('littleThingsSection', CONFIG.littleThings.slice(0, -1), CONFIG.littleThings[CONFIG.littleThings.length - 1]);
 buildRevealSection('distanceSection', CONFIG.distanceLines.slice(0, -1), CONFIG.distanceLines[CONFIG.distanceLines.length - 1]);
 
-/* NICKNAMES */
 const nicknameGrid = document.getElementById('nicknameGrid');
 CONFIG.nicknames.forEach(n => {
   const card = document.createElement('div');
@@ -1224,7 +1201,6 @@ CONFIG.nicknames.forEach(n => {
   nicknameGrid.appendChild(card);
 });
 
-/* GALLERY */
 const mediaGrid = document.getElementById('mediaGrid');
 CONFIG.moments.forEach((item, i) => {
   const tile = document.createElement('div');
@@ -1246,7 +1222,6 @@ CONFIG.moments.forEach((item, i) => {
   mediaGrid.appendChild(tile);
 });
 
-/* LIGHTBOX */
 const lightbox = document.getElementById('lightbox');
 const lightboxMedia = document.getElementById('lightboxMedia');
 const lightboxCap = document.getElementById('lightboxCaption');
@@ -1282,7 +1257,6 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowRight') navLb(1);
 });
 
-/* ENVELOPE */
 const envelope = document.getElementById('envelope');
 let envelopeOpened = false;
 function openEnvelope() {
@@ -1295,7 +1269,6 @@ function openEnvelope() {
 envelope.addEventListener('click', openEnvelope);
 envelope.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openEnvelope(); } });
 
-/* BUILD SMALL CONFESSIONS */
 const confessionList = document.getElementById('confessionList');
 CONFIG.confessions.forEach((c, i) => {
   const div = document.createElement('div');
@@ -1305,7 +1278,6 @@ CONFIG.confessions.forEach((c, i) => {
   confessionList.appendChild(div);
 });
 
-/* BUILD PROMISES */
 const promiseListTen = document.getElementById('promiseListTen');
 CONFIG.promises.forEach((p, i) => {
   const div = document.createElement('div');
@@ -1315,7 +1287,6 @@ CONFIG.promises.forEach((p, i) => {
   promiseListTen.appendChild(div);
 });
 
-/* BUILD FUTURE */
 const futureList = document.getElementById('futureList');
 const futureCount = document.getElementById('futureCount');
 let checkedCount = 0;
@@ -1350,7 +1321,6 @@ function resetFuture() {
   updateFutureCount();
 }
 
-/* LOVE NOTES JAR */
 let lastNoteIndex = -1;
 document.getElementById('jarBtn').addEventListener('click', () => {
   let idx = Math.floor(Math.random() * CONFIG.loveNotes.length);
@@ -1366,7 +1336,6 @@ document.getElementById('jarBtn').addEventListener('click', () => {
   }, 200);
 });
 
-/* FLOW */
 document.getElementById('beginBtn').addEventListener('click', () => { startBgMusic(); showScreen('s-beginning'); });
 document.getElementById('littleThingsContinue').addEventListener('click', () => showScreen('s-nicknames'));
 document.getElementById('nicknamesContinue').addEventListener('click', () => showScreen('s-gallery'));
@@ -1387,7 +1356,6 @@ document.getElementById('futureContinue').addEventListener('click', () => {
   setTimeout(() => { showScreen('s-proposal'); updateUsCounter(); }, remaining.length * 120 + 400);
 });
 
-/* NO BUTTON */
 const yesBtn = document.getElementById('yesBtn');
 const noBtn = document.getElementById('noBtn');
 const NO_LABELS = ['No','Are you sure, Shifa?','Really? 🥺','Think again…','Please?','You sure?','Not yet?','Take your time…','I can wait…','But…','Hmm…','One more thought?','What if…','Just imagine…','Us?','Forever?','Please…','I\'ll wait forever…','There\'s no "No" — only "Yes" 💕'];
@@ -1407,7 +1375,6 @@ function handleNoClick(e) {
 noBtn.addEventListener('click', handleNoClick);
 noBtn.addEventListener('touchstart', e => { e.preventDefault(); handleNoClick(e); }, { passive: false });
 
-/* YES → CELEBRATION */
 function renderCertificateDate() {
   const today = new Date();
   document.getElementById('certDate').textContent = today.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
@@ -1421,14 +1388,12 @@ yesBtn.addEventListener('click', () => {
   setTimeout(showFinalPlayer, 1800);
 });
 
-/* OPEN WHEN YOU MISS ME */
 document.getElementById('missMeBtn').addEventListener('click', () => {
   const letter = document.getElementById('missMeLetter');
   const isOpen = letter.classList.toggle('open');
   if (isOpen) setTimeout(() => letter.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 200);
 });
 
-/* REPLAY */
 document.getElementById('replayBtn').addEventListener('click', () => {
   noTries = 0; noBtn.textContent = NO_LABELS[0]; noBtn.style.opacity = '1'; noBtn.style.pointerEvents = 'auto'; noBtn.style.transform = 'none'; noBtn.style.fontStyle = 'normal'; yesBtn.style.transform = 'none';
   heartTapped = false; heartBtn.classList.remove('tapped'); heartPrompt.style.opacity = ''; heartWrapper.classList.remove('dismissed');
